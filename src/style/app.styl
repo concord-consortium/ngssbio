@@ -17,17 +17,19 @@
 .input-radio
   position absolute
   display flex
-  background-color rgba(230,230,230,0.4)
+  background-color rgba(230,230,230,0.3)
   padding-right 7px
   border 1px solid #e9e9e9
 
   &.disabled
     background-color rgba(230,230,230,0.5)
-    color: #777
+    color: #888
     // pointer-events: none   <-- can't use for IE10, click-shield instead
 
   .click-shield
     position absolute
+    top 0px
+    left 0px
     height 100%
     width 100%
 
@@ -91,11 +93,11 @@ input[type=radio]:not(old):checked + label > span > span
   border 0.0625em solid rgb(150,150,150)
   border-radius 0.125em
   background rgb(200,200,200)
-  background-image -moz-linear-gradient(rgb(200,210,200),rgb(170,200,170))
-  background-image -ms-linear-gradient(rgb(200,210,200),rgb(170,200,170))
-  background-image -o-linear-gradient(rgb(200,210,200),rgb(170,200,170))
-  background-image -webkit-linear-gradient(rgb(200,210,200),rgb(170,200,170))
-  background-image linear-gradient(rgb(200,210,200),rgb(170,200,170))
+  background-image -moz-linear-gradient(rgb(230,240,230),rgb(180,190,180))
+  background-image -ms-linear-gradient(rgb(230,240,230),rgb(180,190,180))
+  background-image -o-linear-gradient(rgb(230,240,230),rgb(180,190,180))
+  background-image -webkit-linear-gradient(rgb(230,240,230),rgb(180,190,180))
+  background-image linear-gradient(rgb(230,240,230),rgb(180,190,180))
 
 .bar-chart
   position absolute
