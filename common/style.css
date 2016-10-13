@@ -194,7 +194,7 @@ td img {
   padding: 0.3em;
 }
 
-td>div>div {
+td:not(.table-header)>div>div {
   background-size: contain;
   background-repeat: no-repeat;
   width: 40px;
