@@ -1,6 +1,10 @@
 (function() {
   var PhotosynthesisApp = function() {
     this.radioButtons = null;
+    this.co2High = true;
+    this.sunHigh = true;
+    this.waterHigh = true;
+    this.outputsHigh = false;
   }
 
   PhotosynthesisApp.prototype.changeBarHeight = function(id, percent) {
@@ -11,20 +15,22 @@
   }
 
   PhotosynthesisApp.prototype.setOutputHigh = function() {
+    this.outputsHigh = true;
     this.changeBarHeight("O2-chart", 95);
     this.changeBarHeight("sugar-chart", 40);
   }
 
   PhotosynthesisApp.prototype.setOutputLow = function() {
+    this.outputsHigh = false;
     this.changeBarHeight("O2-chart", 5);
     this.changeBarHeight("sugar-chart", 5);
   }
 
   PhotosynthesisApp.prototype.updateOutputs = function() {
-    var co2High   = this.radioButtons[1].checked;
-    var sunHigh   = this.radioButtons[3].checked;
-    var waterHigh = this.radioButtons[5].checked;
-    if (sunHigh && co2High && waterHigh) {
+    this.co2High   = this.radioButtons[1].checked;
+    this.sunHigh   = this.radioButtons[3].checked;
+    this.waterHigh = this.radioButtons[5].checked;
+    if (this.sunHigh && this.co2High && this.waterHigh) {
       this.setOutputHigh();
     } else {
       this.setOutputLow();
