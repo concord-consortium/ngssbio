@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../common/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <img src="../common/images/task_ID_83_photosynthesis_model.png" />
+      <div>
+        <div class="input-radio" id="co2"> <!-- CO2 -->
+          <div>
+            <input id="co2-none" type="radio" name="co2" value="co2-none">
+            <label for="co2-none"><span><span></span></span>None</label>
+          </div>
+          <div>
+            <input id="co2-high" type="radio" name="co2" value="co2-high" checked>
+            <label for="co2-high"><span><span></span></span>High</label>
+          </div>
+</div>
+        <div class="input-radio" id="sun"> <!-- Sun -->
+          <div>
+            <input id="sun-none" type="radio" name="sun" value="sun-none">
+            <label for="sun-none"><span><span></span></span>None</label>
+          </div>
+          <div>
+            <input id="sun-high" type="radio" name="sun" value="sun-high" checked>
+            <label for="sun-high"><span><span></span></span>High</label>
+          </div>
+        </div>
+        <div class="input-radio" id="water"> <!-- Water -->
+          <div>
+            <input id="water-none" type="radio" name="water" value="water-none">
+            <label for="water-none"><span><span></span></span>None</label>
+          </div>
+          <div>
+            <input id="water-high" type="radio" name="water" value="water-high" checked>
+            <label for="water-high"><span><span></span></span>High</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="bar-chart" id="O2-chart">
+          <div class="progress-bar">
+            <div class="progress-track">
+              <div class="progress-fill">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bar-chart" id="sugar-chart">
+          <div class="progress-bar">
+            <div class="progress-track">
+              <div class="progress-fill">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="../common/app.js"></script>
+    <script src="model-1.js"></script>
+  </body>
+</html>
