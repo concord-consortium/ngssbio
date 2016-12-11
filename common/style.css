@@ -5,18 +5,18 @@
 }
 
 #co2 {
-  top: 106px;
-  left: 19px;
+	top: 90px;
+	left: 31px;
 }
 
 #sun {
-  top: 233px;
-  left: -15px;
+	top: 218px;
+	left: -19px;
 }
 
 #water {
-  top: 345px;
-  left: 40px;
+	top: 330px;
+	left: 49px;
 }
 
 .input-radio {
@@ -117,13 +117,13 @@ input[type=radio]:not(old):checked + label > span > span {
 }
 
 #O2-chart {
-  top: 39px;
-  left: 508px;
+	top: 33px;
+	left: 484px;
 }
 
 #sugar-chart {
-  top: 209px;
-  left: 508px;
+	top: 182px;
+	left: 485px;
 }
 
 .bar-chart .progress-track,
