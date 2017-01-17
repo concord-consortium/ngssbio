@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../common/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <img src="../common/images/Task_ID_84_hydroponics.png" />
+      <div>
+        <div class="input-radio" id="co2"> <!-- CO2 -->
+          <div>
+            <input id="co2-none" type="radio" name="co2" value="none">
+            <label for="co2-none"><span><span></span></span>No</label>
+          </div>
+          <div>
+            <input id="co2-high" type="radio" name="co2" value="high" checked>
+            <label for="co2-high"><span><span></span></span>Yes</label>
+          </div>
+        </div>
+        <div class="input-radio" id="sun"> <!-- Sun -->
+          <div>
+            <input id="sun-none" type="radio" name="sun" value="none">
+            <label for="sun-none"><span><span></span></span>No</label>
+          </div>
+          <div>
+            <input id="sun-high" type="radio" name="sun" value="high" checked>
+            <label for="sun-high"><span><span></span></span>Yes</label>
+          </div>
+        </div>
+        <div class="input-radio" id="water"> <!-- Water -->
+          <div>
+            <input id="water-none" type="radio" name="water" value="none">
+            <label for="water-none"><span><span></span></span>No</label>
+          </div>
+          <div>
+            <input id="water-high" type="radio" name="water" value="high" checked>
+            <label for="water-high"><span><span></span></span>Yes</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="bar-chart" id="O2-chart">
+          <div class="progress-bar">
+            <div class="progress-track">
+              <div class="progress-fill">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bar-chart" id="sugar-chart">
+          <div class="progress-bar">
+            <div class="progress-track">
+              <div class="progress-fill">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button id="simulate">Simulate</button>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="table-header">Taken in by plant</th>
+              <th class="table-header" id="o2-header">
+                <div>
+                  <img id="o2-img" src="../common/images/oxygen-bubble.png" />
+                  <div>Oxygen produced by plant</div>
+                </div>
+              </th>
+              <th class="table-header" id="sugar-header">
+                <div>
+                  <img id="sugar-img" src="../common/images/leaf-glucose.png" />
+                  <div>Sugar produced by plant</div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="inputs"></div></td>
+              <td><div class="output"></div></td>
+              <td><div class="output"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      <div class="table-container">
+    </div>
+
+    <!-- scripts -->
+    <script src="../common/app.js"></script>
+    <script src="model-6.js"></script>
+  </body>
+</html>
