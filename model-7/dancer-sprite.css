@@ -1,8 +1,30 @@
-.frame { 
- background-color: transparent;
- background-image: url(sprite-dancer190f9b42899a1b98ba4ab9bf5268ad97.jpg);
- background-repeat: no-repeat;
- width: 119px;  }
+#background-image {
+  position: absolute;
+  width: 928px;
+  height: 334px;
+  background-color: transparent;
+  background-image: url(dancer-background.jpg);
+  background-repeat: no-repeat;
+}
+
+#dancer {
+  position: absolute;
+  top: 71px;
+  left: 162px;
+  background-color: transparent;
+  background-image: url(dancer-sprite.jpg);
+  background-repeat: no-repeat;
+  width: 119px;
+  height: 145px;
+}
+
+#controls {
+ position: absolute;
+ top: 300px;
+}
+button {
+ margin: 5px;
+}
 .frame-0 { background-position: 0 0; }
 .frame-1 { background-position: -238px 0; } 
 .frame-2 { background-position: -357px 0; } 

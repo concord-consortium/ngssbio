@@ -1,0 +1,44 @@
+#graph {
+    position: absolute;
+    left: 560px;
+    top: 0px;
+    width: 360px;
+    height: 290px;
+    background-color: white;
+}
+
+#energy-chart {
+    left: 529px;
+    top: 221px;
+}
+
+#energy-chart  .progress-fill {
+    background: #FF3333;
+}
+
+#water-chart {
+    left: 529px;
+    top: 118px;
+}
+
+#water-chart  .progress-fill {
+    background: #00CCFF;
+}
+
+#co2-chart {
+    left: 529px;
+    top: 17px;
+}
+
+#co2-chart  .progress-fill {
+    background: #9900CC;
+}
+
+#glucose-chart {
+    left: 529px;
+    top: 17px;
+}
+
+#glucse-chart  .progress-fill {
+    background: #00AA00;
+}
