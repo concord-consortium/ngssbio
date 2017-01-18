@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="../common/style.css">
+    <link rel="stylesheet" type="text/css" href="model-6.css">
   </head>
   <body>
     <div id="app">
@@ -60,26 +62,36 @@
       <div>
         <button id="simulate">Simulate</button>
       </div>
-      <table>
-        <thead>
+      <table class="header">
           <tr>
             <td class="table-header">Taken in by plant</td>
-            <td class="table-header" id="o2-header"><div><img id="o2-img" src="../common/images/oxygen-bubble.png" /><div>Oxygen produced by plant</div></div></td>
-            <td class="table-header" id="sugar-header"><div><img id="sugar-img" src="../common/images/leaf-glucose.png" /><div>Sugar produced by plant</div></div></td>
+            <td class="table-header" id="o2-header">
+              <div>
+                <img id="o2-img" src="../common/images/oxygen-bubble.png" />
+                <div>Oxygen produced by plant</div>
+              </div>
+            </td>
+            <td class="table-header" id="sugar-header">
+              <div>
+                <img id="sugar-img" src="../common/images/leaf-glucose.png" />
+                <div>Sugar produced by plant</div>
+              </div>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="inputs"></div></td>
-            <td><div class="output"></div></td>
-            <td><div class="output"></div></td>
-          </tr>
-        </tbody>
-      </table>
+        </table>
+        <div class='table-scroller'>
+          <table id="data">
+            <tr>
+              <td><div class="inputs"></div></td>
+              <td><div class="output"></div></td>
+              <td><div class="output"></div></td>
+            </tr>
+          </table>
+        </div>
     </div>
 
     <!-- scripts -->
     <script src="../common/app.js"></script>
-    <script src="model-2.js"></script>
+    <script src="model-6.js"></script>
   </body>
 </html>

@@ -1,0 +1,17 @@
+.table-scroller {
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 0px;
+    padding: 0px;
+}
+table {
+    margin: 0px;
+    padding: 0px;
+    height: inherit;
+}
+table.header {
+    margin-top: 4em;
+}
+td {
+    width: 155px;
+}
