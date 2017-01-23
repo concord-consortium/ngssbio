@@ -257,9 +257,9 @@ resetButton.addEventListener("click", reset);
 eatButton.addEventListener("click", eat);
 
 
+initGraph();
 reset();
 
-initGraph();
 
 activitySelect.addEventListener("change", setActivityLevel);
 
