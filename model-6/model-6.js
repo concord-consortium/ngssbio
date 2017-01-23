@@ -18,15 +18,11 @@
       '<td><div class="output"></div></td>';
     var rowElm = document.createElement("tr");
     rowElm.innerHTML = newRowMarkup;
-    tableBody.appendChild(rowElm);
-    rowElm.scrollIntoView();
+    tableBody.insertBefore(rowElm,tableBody.childNodes[0]);
   }
 
   function addInputImage(className) {
-    if(rows.length <= run+1) {
-      addRow();
-    }
-    var row = rows[run],
+    var row = rows[1],
         cell = row.querySelector(".inputs"),
         sunIcon = document.createElement("div");
     addClass(sunIcon, className);
@@ -34,7 +30,7 @@
   }
 
   function addOutputImages(className) {
-    var row = rows[run],
+    var row = rows[1],
         cells = row.querySelectorAll(".output"),
         icon = document.createElement("div");
 
@@ -44,6 +40,11 @@
   }
 
   function simulate() {
+    console.log(rows.length+" "+run);
+    if(rows.length <= run) {
+      console.log("added row");
+      addRow();
+    }
     photosynthesisApp.updateOutputs();
     if (photosynthesisApp.co2High) {
       addInputImage("co2-img");
