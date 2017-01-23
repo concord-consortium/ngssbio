@@ -1,6 +1,6 @@
 canvas#graph {
     position: absolute;
-    left: 560px;
+    left: 590px;
     top: 0px;
     width: 360px;
     height: 290px;
@@ -35,8 +35,8 @@ canvas#graph {
 }
 
 #glucose-chart {
-    left: 529px;
-    top: 17px;
+    left: 291px;
+    top: 125px;
 }
 
 #glucse-chart  .progress-fill {

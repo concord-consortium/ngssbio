@@ -3,10 +3,9 @@ var LAST_FRAME_INDEX = 12;
 var SLOW_INTERVAL    = 100;
 var FAST_INTERVAL    = 30;
 
-var GLUCOSE_COLOR = "green"
-var CO2_COLOR = "purple"
-var WATER_COLOR = "blue"
-var ENERGY_COLOR = "red"
+var CO2_COLOR = "#9900CC"
+var WATER_COLOR = "#00CCFF"
+var ENERGY_COLOR = "#FF3333"
 
 var REST_INTERVAL = Infinity;
 var running = false;
@@ -14,6 +13,10 @@ var frameInterval = REST_INTERVAL;
 var lastAnimTime = null;
 var frameNumber = RESTING_FRAME;
 var glucose = 80;
+
+var co2 = 10;
+var water = 10;
+var energy = 10;
 
 var co2Data = [];
 var waterData = [];
@@ -23,14 +26,31 @@ var accumulatedCo2 = 0;
 var accumulatedWater = 0;
 var accumulatedEnergy = 0;
 
-var xTicks = {
-  autoSkip: false,
-  maxTicksLimit: 10,
-  fixedStepSize: 1
-};
+var startButton = document.getElementById("start");
+var stopButton = document.getElementById("stop");
+var resetButton = document.getElementById("reset");
+var activitySelect = document.getElementById("activity-select");
+var eatButton = document.getElementById("eat");
+
+var ctx = document.getElementById("graph").getContext('2d');
+var graph;
 
 var startSecond;
 var lastGraphSecond = 0;
+
+
+var xTicks = {
+  autoSkip: false,
+  maxTicksLimit: 10,
+  beginAtZero: true
+};
+var yTicks = {
+  autoSkip: false,
+  display: false,
+  beginAtZero: true
+};
+
+
 
 var data = {
   datasets: [
@@ -38,25 +58,26 @@ var data = {
       label: "co2",
       borderColor: CO2_COLOR,
       fill: false,
+      pointRadius: 0,
       data: co2Data
     },
     {
       label: "water",
       borderColor: WATER_COLOR,
       fill: false,
+      pointRadius: 0,
       data: waterData
     },
     {
       label: "energy",
       fill: false,
       borderColor: ENERGY_COLOR,
+      pointRadius: 0,
       data: energyData
     }
   ]
 };
 
-var ctx = document.getElementById("graph").getContext('2d');
-var graph;
 
 
 function currentSecond() {
@@ -68,15 +89,14 @@ function currentSecond() {
 
 function drawGraph() {
   var second = currentSecond();
-
   var trim = function(ary) {
-    var maxSize = 10;
+    var maxSize = 240;
     ary.splice(0,Math.max(0,ary.length -maxSize));
   }
   if (second > lastGraphSecond) {
-    co2Data.push    ( {y: accumulatedCo2, x:second});
-    energyData.push ( {y: accumulatedEnergy, x:second});
-    waterData.push  ( {y: accumulatedWater, x:second})
+    co2Data.push    ( {y: accumulatedCo2, x:second -1});
+    energyData.push ( {y: accumulatedEnergy, x:second -1});
+    waterData.push  ( {y: accumulatedWater, x:second -1})
     lastGraphSecond = second;
 
     trim(co2Data);
@@ -93,9 +113,6 @@ function changeBarHeight (id, percent) {
 }
 
 function updateOutputs() {
-  var co2 = 10;
-  var water = 10;
-  var energy = 10;
   glucose = glucose - .01;
 
   accumulatedEnergy += Math.random() * 0.01;
@@ -151,6 +168,7 @@ function animate(timestamp) {
 
 function start() {
   running = true;
+  startSecond = Math.floor((new Date).getTime()/1000);
   enableButton('start', false);
   enableButton('stop', true);
   requestAnimationFrame(animate);
@@ -164,6 +182,27 @@ function stop() {
 
 function reset() {
   stop();
+  lastAnimTime = null;
+  lastGraphSecond = 0;
+
+  glucose = 80;
+  co2 = 10;
+  water = 10;
+  energy = 10;
+
+  accumulatedCo2 = co2;
+  accumulatedWater = water;
+  accumulatedEnergy = energy;
+
+  while(co2Data.length > 0) {
+    co2Data.pop();
+    waterData.pop();
+    energyData.pop();
+  }
+  if (graph) {
+    graph.update(0);
+  }
+  updateOutputs();
 }
 
 function setActivityLevel(e) {
@@ -174,7 +213,11 @@ function setActivityLevel(e) {
 }
 
 function eat() {
-
+  glucose = glucose + 20;
+  if (glucose > 100) {
+    glucose = 100;
+  }
+  changeBarHeight("glucose-chart", glucose);
 }
 
 function initGraph() {
@@ -184,7 +227,14 @@ function initGraph() {
       xAxes: [{
         type: 'linear',
         position: 'bottom',
-        ticks: xTicks
+        ticks: xTicks,
+        min: 1
+      }],
+      yAxes: [{
+        type: 'linear',
+        position: 'left',
+        ticks: yTicks,
+        min: 1
       }]
     }
   };
@@ -194,17 +244,22 @@ function initGraph() {
     options: graphOptions
   });
 }
-var startButton = document.getElementById("start");
-var stopButton = document.getElementById("stop");
-var resetButton = document.getElementById("reset");
-var activitySelect = document.getElementById("activity-select");
-var eatButton = document.getElementById("eat");
 
-initGraph();
+
+changeBarHeight("co2-chart",  co2);
+changeBarHeight("water-chart", water);
+changeBarHeight("energy-chart", energy);
+changeBarHeight("glucose-chart", glucose);
+
 startButton.addEventListener("click", start);
 stopButton.addEventListener("click", stop);
 resetButton.addEventListener("click", reset);
 eatButton.addEventListener("click", eat);
+
+
+reset();
+
+initGraph();
 
 activitySelect.addEventListener("change", setActivityLevel);
 
