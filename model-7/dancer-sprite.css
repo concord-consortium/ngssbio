@@ -20,11 +20,14 @@
 
 #controls {
  position: absolute;
- top: 300px;
+ top: 279px;
+ left: 76px;
 }
+
 button {
- margin: 5px;
+ margin: 0px;
 }
+
 .frame-0 { background-position: 0 0; }
 .frame-1 { background-position: -238px 0; } 
 .frame-2 { background-position: -357px 0; } 

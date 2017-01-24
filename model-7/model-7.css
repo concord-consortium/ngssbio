@@ -42,3 +42,60 @@ canvas#graph {
 #glucse-chart  .progress-fill {
     background: #00AA00;
 }
+
+.bar-chart .progress-fill {
+  -webkit-transition: top 0s, height 0s;
+  transition: top 0s, height 0s;
+}
+
+#activities {
+  height: 60px;
+}
+
+#eat {
+  float: left;
+  margin-top: 15px;
+  margin-right: 5px;
+}
+
+#hungry {
+  position: absolute;
+  top: 236px;
+  left: 156px;
+  border-radius: 6px;
+  background: #ffbcba;
+  font: bold 14px Arial,sans-serif;
+  padding: 6px;
+  border: 1px solid;
+  visibility: hidden;
+}
+
+#activity-level-label {
+  font: bold 14px Arial,sans-serif;
+}
+
+#activity-select {
+  height: 36px;
+  width: 150px;
+  font-size: 12pt;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  -moz-box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.1), 0 0.1em 0.2em rgba(0, 0, 0, 0.1), 0 -0.1em 0.07em rgba(0, 0, 0, 0.1) inset, 0 0.1em 0.07em rgba(255, 255, 255, 0.1) inset;
+  -webkit-box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.1), 0 0.1em 0.2em rgba(0, 0, 0, 0.1), 0 -0.1em 0.07em rgba(0, 0, 0, 0.1) inset, 0 0.1em 0.07em rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.1), 0 0.1em 0.2em rgba(0, 0, 0, 0.1), 0 -0.1em 0.07em rgba(0, 0, 0, 0.1) inset, 0 0.1em 0.07em rgba(255, 255, 255, 0.1) inset;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e1e1e1), color-stop(100%, #eeeeee));
+  background: -moz-linear-gradient(#e1e1e1, #eeeeee);
+  background: -webkit-linear-gradient(#e1e1e1, #eeeeee);
+  background: linear-gradient(#e1e1e1, #eeeeee);
+}
+
+#activity-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+}
