@@ -2,7 +2,8 @@
   var run = 1,
       rows = document.getElementsByTagName("tr"),
       tableBody = document.getElementById("data")
-      simulateButton = document.getElementById("simulate");
+      simulateButton = document.getElementById("simulate2");
+      clearButton = document.getElementById("clear");
 
   function addClass(el, className) {
     if (el.classList)
@@ -63,7 +64,19 @@
     run++;
   }
 
+  function clear() {
+    var blankRow = ''+
+      '<tr>' +
+      '<td><div class="inputs"></div></td>' +
+      '<td><div class="output"></div></td>' +
+      '<td><div class="output"></div></td>' +
+      '</tr>';
+    tableBody.innerHTML = blankRow;
+    run = 1;
+  }
+
   simulateButton.onclick = simulate;
+  clearButton.onclick = clear;
 
   setTimeout( photosynthesisApp.setOutputLow.bind(photosynthesisApp), 500);
 })();

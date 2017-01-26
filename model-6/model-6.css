@@ -15,3 +15,13 @@ table.header {
 td {
     width: 155px;
 }
+
+#simulate {
+    position: relative;
+}
+
+#buttons {
+  position: absolute;
+  top: 328px;
+  left: 250px;
+}
