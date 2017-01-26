@@ -62,7 +62,7 @@ var yTicks = {
 var data = {
   datasets: [
     {
-      label: "co2",
+      label: "carbon dioxide",
       borderColor: CO2_COLOR,
       backgroundColor: CO2_COLOR,
       fill: false,
