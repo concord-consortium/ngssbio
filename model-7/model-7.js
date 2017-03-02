@@ -217,6 +217,7 @@ function reset() {
   updateOutputs();
   startButton.disabled = false;
   stopButton.disabled = true;
+  hungerNotice.style.visibility = "hidden";
 }
 
 function setActivityLevel(e) {
