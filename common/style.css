@@ -162,7 +162,7 @@ input[type=radio]:not(old):checked + label > span > span {
 }
 
 table {
-  width: 529px;
+  width: 520px;
   height: 220px;
   margin-top: 41px;
   border: 1px solid #000;
