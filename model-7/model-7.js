@@ -1,7 +1,7 @@
 var RESTING_FRAME    = 0;
 var LAST_FRAME_INDEX = 12;
-var SLOW_INTERVAL    = 100;
-var FAST_INTERVAL    = 30;
+var SLOW_INTERVAL    = 100;// no longer used in this version
+var FAST_INTERVAL    = 60; //was 30 when we had fast and slow dancing - request was to only have "dancing" so this was raised to make the dancing look more natural
 
 var CO2_COLOR = "#9900CC"
 var WATER_COLOR = "#00CCFF"
